@@ -18,16 +18,6 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(subtract(0, 3), -3)
         self.assertEqual(subtract(-3, -3), 0)
 
-    def test_multiply(self):
-        self.assertEqual(mul(2, 3), 6)
-        self.assertEqual(mul(-1, 3), -3)
-        self.assertEqual(mul(0, 100), 0)
-
-    def test_divide(self):
-        self.assertEqual(div(6, 2), 3)
-        self.assertEqual(div(-9, 3), -3)
-        self.assertAlmostEqual(div(1, 3), 0.3333, places=4)
-
     def test_divide_by_zero(self):
         with self.assertRaises(ValueError):
             div(5, 0)
@@ -44,6 +34,16 @@ class TestCalculator(unittest.TestCase):
             logarithm(-2, 10)
         with self.assertRaises(ValueError):
             logarithm(2, -10)
+
+    def test_multiply(self):
+        self.assertEqual(mul(2, 3), 6)
+        self.assertEqual(mul(-1, 3), -3)
+        self.assertEqual(mul(0, 100), 0)
+
+    def test_divide(self):
+        self.assertEqual(div(6, 2), 3)
+        self.assertEqual(div(-9, 3), -3)
+        self.assertAlmostEqual(div(1, 3), 0.3333, places=4)
 
     def test_hypotenuse(self):
         self.assertAlmostEqual(hypotenuse(3, 4), 5.0)
