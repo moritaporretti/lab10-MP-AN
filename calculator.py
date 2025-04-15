@@ -2,6 +2,7 @@
 # Partner 1: Morita Porretti
 # Partner 2: Alula Nahu
 
+
 import math
 
 def square_root(a):
@@ -26,7 +27,7 @@ def div(a, b):
         raise ZeroDivisionError("Cannot divide by zero")
     return b / a
 
-def log(a, b):
+def logarithm(a, b):
     if a <= 0 or a == 1 or b <= 0:
         raise ValueError("Invalid input for logarithm")
     return math.log(b, a)
