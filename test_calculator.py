@@ -2,10 +2,11 @@
 # Partner 1: Morita Porretti
 # Partner 2: Alula Nahu
 
+
 import unittest
 from calculator import (
     add, subtract, mul, div,
-    log, exp, square_root, hypotenuse
+    logarithm, exp, square_root, hypotenuse
 )
 
 class TestCalculator(unittest.TestCase):
@@ -32,19 +33,19 @@ class TestCalculator(unittest.TestCase):
             div(0, 10)
 
     def test_logarithm(self):
-        self.assertAlmostEqual(log(2, 8), 3.0)
+        self.assertAlmostEqual(logarithm(2, 8), 3.0)
 
     def test_log_invalid_argument(self):
         with self.assertRaises(ValueError):
-            log(1, 10)
+            logarithm(1, 10)
         with self.assertRaises(ValueError):
-            log(-2, 10)
+            logarithm(-2, 10)
         with self.assertRaises(ValueError):
-            log(2, -10)
+            logarithm(2, -10)
 
     def test_log_invalid_base(self):
         with self.assertRaises(ValueError):
-            log(1, 100)
+            logarithm(1, 100)
 
     def test_hypotenuse(self):
         self.assertAlmostEqual(hypotenuse(3, 4), 5.0)
