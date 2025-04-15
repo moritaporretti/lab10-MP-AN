@@ -60,3 +60,7 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(exp(2, 3), 8)
         self.assertEqual(exp(5, 0), 1)
 
+    # Do not touch this
+    if __name__ == "__main__":
+        unittest.main()
+
