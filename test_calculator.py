@@ -4,8 +4,8 @@
 
 import unittest
 from calculator import (
-    add, subtract, multiply, divide,
-    logarithm, exponent, square_root, hypotenuse
+    add, subtract, mul, div,
+    log, exp, square_root, hypotenuse
 )
 
 class TestCalculator(unittest.TestCase):
@@ -19,32 +19,32 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(subtract(-3, -1), -2)
 
     def test_multiply(self):
-        self.assertEqual(multiply(2, 3), 6)
-        self.assertEqual(multiply(-1, 5), -5)
+        self.assertEqual(mul(2, 3), 6)
+        self.assertEqual(mul(-1, 5), -5)
 
     def test_divide(self):
-        self.assertEqual(divide(2, 6), 3)
+        self.assertEqual(div(2, 6), 3)
         with self.assertRaises(ZeroDivisionError):
-            divide(0, 6)
+            div(0, 6)
 
     def test_divide_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
-            divide(0, 10)
+            div(0, 10)
 
     def test_logarithm(self):
-        self.assertAlmostEqual(logarithm(2, 8), 3.0)
+        self.assertAlmostEqual(log(2, 8), 3.0)
 
     def test_log_invalid_argument(self):
         with self.assertRaises(ValueError):
-            logarithm(1, 10)
+            log(1, 10)
         with self.assertRaises(ValueError):
-            logarithm(-2, 10)
+            log(-2, 10)
         with self.assertRaises(ValueError):
-            logarithm(2, -10)
+            log(2, -10)
 
     def test_log_invalid_base(self):
         with self.assertRaises(ValueError):
-            logarithm(1, 100)
+            log(1, 100)
 
     def test_hypotenuse(self):
         self.assertAlmostEqual(hypotenuse(3, 4), 5.0)
@@ -56,8 +56,6 @@ class TestCalculator(unittest.TestCase):
             square_root(-1)
 
     def test_exponent(self):
-        self.assertEqual(exponent(2, 3), 8)
-        self.assertEqual(exponent(5, 0), 1)
-
-
+        self.assertEqual(exp(2, 3), 8)
+        self.assertEqual(exp(5, 0), 1)
 
